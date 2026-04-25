@@ -12,28 +12,43 @@ body {
   color: #333;
 }
 
-/* Auto-Sliding Anime Header */
-.anime-scroll {
+/* Slider Container */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.slides {
   display: flex;
   width: 300%;
   height: 300px;
-  animation: slideAnime 12s infinite;
+  transition: transform 1s ease-in-out;
 }
-.scroll-item {
-  flex: 0 0 100%;
-}
-.scroll-item img {
+.slides img {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
-/* Animation */
-@keyframes slideAnime {
-  0% { transform: translateX(0%); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
+/* Navigation Dots */
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: #333;
 }
 
 /* Main Content */
@@ -95,16 +110,17 @@ footer {
 </head>
 <body>
 
-<!-- Auto-Sliding Header -->
-<div class="anime-scroll">
-  <div class="scroll-item">
+<!-- Slider with Clickable Dots -->
+<div class="slider">
+  <div class="slides" id="slides">
     <img src="https://upload.wikimedia.org/wikipedia/en/0/0b/Tanjiro_Kamado.png" alt="Demon Slayer">
-  </div>
-  <div class="scroll-item">
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/F1_2022_Austria_GP.jpg" alt="Formula 1 Racing">
-  </div>
-  <div class="scroll-item">
     <img src="https://upload.wikimedia.org/wikipedia/en/8/88/Shinchan_character.png" alt="Shinchan">
+  </div>
+  <div class="dots">
+    <span class="dot active" onclick="showSlide(0)"></span>
+    <span class="dot" onclick="showSlide(1)"></span>
+    <span class="dot" onclick="showSlide(2)"></span>
   </div>
 </div>
 
@@ -125,6 +141,25 @@ footer {
 </div>
 
 <footer>© 2026 Oversize Hub</footer>
+
+<script>
+let currentSlide = 0;
+const slides = document.getElementById("slides");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+  currentSlide = index;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % 3;
+  showSlide(currentSlide);
+}, 5000);
+</script>
 
 </body>
 </html>
