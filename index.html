@@ -1,134 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Oversize Hub</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #f8f8f8, #e3f2fd);
-    }
-
-    header {
-      background: linear-gradient(90deg, #ff6f61, #ffcc00);
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-      font-weight: bold;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 16px;
-      color: #fff3e0;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      padding: 40px;
-    }
-
-    .product {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: 0.3s;
-      max-width: 300px;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-    }
-
-    .product img {
-      width: 100%;
-      border-bottom: 5px solid #ff6f61;
-    }
-
-    .product-content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .product h3 {
-      margin: 10px 0;
-      color: #333;
-    }
-
-    .price {
-      color: #2e7d32;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 12px;
-      width: 100%;
-      background: linear-gradient(90deg, #42a5f5, #7e57c2);
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      font-size: 15px;
-    }
-
-    button:hover {
-      background: linear-gradient(90deg, #1e88e5, #5e35b1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(90deg, #ff6f61, #ffcc00);
-      color: white;
-      margin-top: 30px;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Oversize Hub</h1>
-  <p>Comfort meets style</p>
-</header>
-
-<div class="container">
-
-  <div class="product">
-    <img src="https://via.placeholder.com/300/ffcc00/000000?text=Oversize+Tee">
-    <div class="product-content">
-      <h3>Oversize Tee</h3>
-      <p class="price">₹549</p>
-      <a href="https://wa.me/918355958682">
-        <button>Order on WhatsApp</button>
-      </a>
-    </div>
+<!-- SCROLLABLE HEADER SECTION -->
+<div class="anime-scroll">
+  <div class="scroll-item">
+    <img src="anime1.jpg" alt="Demon Slayer & Jujutsu Kaisen">
   </div>
-
+  <div class="scroll-item">
+    <img src="formula1.jpg" alt="Formula 1 Racing">
+  </div>
+  <div class="scroll-item">
+    <img src="shinchan.jpg" alt="Shinchan">
+  </div>
 </div>
 
-<!-- ABOUT US SECTION -->
-<div style="padding: 30px; text-align:center; background:#fffde7; border-radius:12px; margin:20px;">
-  <h2 style="color:#ff6f61;">About Us</h2>
-  <p style="color:#444; font-size:16px;">
-    Oversize Hub is dedicated to providing comfortable and stylish oversized clothing. 
-    We focus on quality, perfect fit, and everyday wear that makes you feel confident and relaxed.
-  </p>
-</div>
-
-<footer>
-  <p>© 2026 Oversize Hub</p>
-</footer>
-
-</body>
-</html>
+<style>
+.anime-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  padding: 10px 0;
+}
+.scroll-item {
+  flex: 0 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.scroll-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+</style>
