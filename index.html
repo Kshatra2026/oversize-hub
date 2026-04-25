@@ -1,32 +1,131 @@
-<!-- SCROLLABLE HEADER SECTION -->
-<div class="anime-scroll">
-  <div class="scroll-item">
-    <img src="anime1.jpg" alt="Demon Slayer & Jujutsu Kaisen">
-  </div>
-  <div class="scroll-item">
-    <img src="formula1.jpg" alt="Formula 1 Racing">
-  </div>
-  <div class="scroll-item">
-    <img src="shinchan.jpg" alt="Shinchan">
-  </div>
-</div>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oversize Hub</title>
 <style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Scrollable Anime Header */
 .anime-scroll {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
   background: linear-gradient(to right, #1e3c72, #2a5298);
-  padding: 10px 0;
+  position: relative;
 }
 .scroll-item {
-  flex: 0 0 auto;
-  width: 100%;
-  text-align: center;
+  flex: 0 0 100%;
+  transition: transform 1s ease-in-out;
 }
 .scroll-item img {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Animation */
+@keyframes slideAnime {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+.anime-scroll {
+  animation: slideAnime 12s infinite;
+}
+
+/* Main Content */
+h1 {
+  text-align: center;
+  color: #444;
+  margin-top: 20px;
+}
+h2 {
+  text-align: center;
+  color: #666;
+  font-weight: normal;
+}
+.card {
+  width: 300px;
+  margin: 30px auto;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.price {
+  color: green;
+  font-weight: bold;
+}
+button {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
   border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #1EBE57;
+}
+
+/* About Us */
+.about {
+  text-align: center;
+  margin: 40px auto;
+  width: 80%;
+}
+.about h3 {
+  color: #FF7F50;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
 }
 </style>
+</head>
+<body>
+
+<!-- Auto-Sliding Header -->
+<div class="anime-scroll">
+  <div class="scroll-item"><img src="anime1.jpg" alt="Demon Slayer & Jujutsu Kaisen"></div>
+  <div class="scroll-item"><img src="formula1.jpg" alt="Formula 1 Racing"></div>
+  <div class="scroll-item"><img src="shinchan.jpg" alt="Shinchan"></div>
+</div>
+
+<!-- Main Content -->
+<h1>Oversize Hub</h1>
+<h2>Comfort meets style</h2>
+
+<div class="card">
+  <img src="yellow-tshirt.jpg" alt="Oversized T-shirt">
+  <h3>Oversized T-shirt</h3>
+  <p class="price">₹549</p>
+  <button>Order on WhatsApp</button>
+</div>
+
+<div class="about">
+  <h3>About Us</h3>
+  <p>Oversize Hub is dedicated to providing comfortable and stylish oversized clothing. We focus on quality, perfect fit, and everyday wear that makes you feel confident and relaxed.</p>
+</div>
+
+<footer>© 2026 Oversize Hub</footer>
+
+</body>
+</html>
