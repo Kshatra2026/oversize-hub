@@ -12,24 +12,20 @@ body {
   color: #333;
 }
 
-/* Scrollable Anime Header */
+/* Auto-Sliding Anime Header */
 .anime-scroll {
   display: flex;
-  overflow: hidden;
-  width: 100%;
+  width: 300%;
   height: 300px;
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  position: relative;
+  animation: slideAnime 12s infinite;
 }
 .scroll-item {
   flex: 0 0 100%;
-  transition: transform 1s ease-in-out;
 }
 .scroll-item img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 0;
 }
 
 /* Animation */
@@ -38,9 +34,6 @@ body {
   33% { transform: translateX(-100%); }
   66% { transform: translateX(-200%); }
   100% { transform: translateX(0%); }
-}
-.anime-scroll {
-  animation: slideAnime 12s infinite;
 }
 
 /* Main Content */
@@ -104,9 +97,15 @@ footer {
 
 <!-- Auto-Sliding Header -->
 <div class="anime-scroll">
-  <div class="scroll-item"><img src="anime1.jpg" alt="Demon Slayer & Jujutsu Kaisen"></div>
-  <div class="scroll-item"><img src="formula1.jpg" alt="Formula 1 Racing"></div>
-  <div class="scroll-item"><img src="shinchan.jpg" alt="Shinchan"></div>
+  <div class="scroll-item">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0b/Tanjiro_Kamado.png" alt="Demon Slayer & Jujutsu Kaisen">
+  </div>
+  <div class="scroll-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/F1_2022_Austria_GP.jpg" alt="Formula 1 Racing">
+  </div>
+  <div class="scroll-item">
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/88/Shinchan_character.png" alt="Shinchan">
+  </div>
 </div>
 
 <!-- Main Content -->
@@ -114,7 +113,7 @@ footer {
 <h2>Comfort meets style</h2>
 
 <div class="card">
-  <img src="yellow-tshirt.jpg" alt="Oversized T-shirt">
+  <img src="https://images.unsplash.com/photo-1618354691385-1e3d9f2f0a3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Oversized T-shirt">
   <h3>Oversized T-shirt</h3>
   <p class="price">₹549</p>
   <button>Order on WhatsApp</button>
